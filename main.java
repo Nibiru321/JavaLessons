@@ -2,29 +2,27 @@ import java.util.Scanner;
 class Main {
     public static void main(String[] args) {
         Scanner scn = new Scanner(System.in);
-        int day = scn.nextInt();
-        switch(day){
-            case 1:
-                System.out.println("Monday");
-                break;
-            case 2:
-                System.out.println("Tuesday");
-                break;
-            case 3:
-                System.out.println("Wednesday");
-                break;
-            case 4:
-                System.out.println("Thursday");
-                break;
-            case 5:
-                System.out.println("Friday");
-                break;
-            case 6:
-                System.out.println("Saturday");
-                break;
-            case 7:
-                System.out.println("Sunday");
-                break;
-        }
+        int number;
+        int max = Integer.MIN_VALUE;
+        int min = Integer.MAX_VALUE;
+        char choice;
+        do {
+            System.out.print("Enter the number ");
+            number = scn.nextInt();
+
+            if(number > max){
+                max = number;
+            }
+
+            if(number < min){
+                min = number;
+            }
+            System.out.print("Do you want to continue y/n? ");
+            choice = scn.next().charAt(0);
+
+        }while(choice == 'y' || choice == 'Y');
+
+        System.out.println("Largest number: " + max);
+        System.out.println("Smallest number: " + min);
     }
 }
