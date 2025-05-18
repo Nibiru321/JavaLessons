@@ -1,17 +1,27 @@
-class Counter {
-    int number=10;
+class Student {
+    String subject;
+    String name;
+    int age;
 
-    void increment(){
-        number=number+1;
+    Student(){
+        System.out.println("*****");
+        subject = "English";
+        name = "Ash";
+        age = 19;
     }
+    void displayDetails(){
+        System.out.println(subject + " | " + name + " | " + age);
+    }
+}
 
+class Main{
     public static void main(String[] args) {
-        Counter obj1=new Counter();
-        Counter obj2=new Counter();
-        Counter obj3=new Counter();
+        Student std1 = new Student();
+        Student std2 = new Student();
+        Student std3 = new Student();
 
-        obj1.increment();
-        obj2.increment();
-        obj3.increment();
+        std1.displayDetails();
+        std2.displayDetails();
+        std3.displayDetails();
     }
 }
