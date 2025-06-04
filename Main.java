@@ -1,32 +1,24 @@
-abstract class Objects {
-    abstract void showShape();
-    public void shape(){
-        System.out.println("I'm from abstract class");
-    }
-}
-
-class Sphere extends Objects {
-    void showShape() {
-        System.out.println("Object type is Sphere.");
-    }
-}
-
-class Cuboid extends Objects {
-    void showShape() {
-        System.out.println("Object type is Cuboid.");
-    }
-}
-
-class Prism extends Objects {
-    void showShape() {
-        System.out.println("Object type is Prism.");
-    }
-}
+import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        Objects obj = new Sphere();
-        obj.showShape();
-        obj = new Cuboid();
-    }   
+        Scanner sc = new Scanner(System.in);
+
+        try {
+            System.out.println("Enter two numbers:");
+            int x = sc.nextInt();
+            int y = sc.nextInt();
+            int z = x/y;
+            System.out.println(x + "/" + y + "=" + z);
+        } catch (ArithmeticException ex) {
+            System.out.println("--- catch block  ---");
+            System.out.println(ex.toString());
+        } finally {
+            System.out.println("--- finally block ---");
+            System.out.println("Application Designed & Developed by");
+            System.out.println("team @ codingal");
+            sc.close();
+        }
+        System.out.println("---DONE---");
+    }
 }
